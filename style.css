@@ -19,6 +19,15 @@
     --bg-color:#fff;
     
 }
+/* custom scroll-scrollbar  */
+html::-webkit-scrollbar{
+    width: 0.5rem;
+    background: var(--text-color);
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
 body{
     background: var(--text-color);
     color: var(--bg-color);
@@ -27,6 +36,7 @@ section{
     padding: 4.5rem 0 1.5rem;
 }
 header{
+    background: var(--bg-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -39,6 +49,14 @@ header{
     transition: 0.5s;
     /* background: var(--main-color); */
 }
+header .shadow  {
+    background: var(--bg-color);
+    box-shadow: 0 0 4px rgb(14 55 54/15%);
+}
+header .navbar a{
+    color: black;
+}
+header .logo
 .logo{
     font-size: 1.1rem;
     font-weight: 600;
@@ -95,11 +113,12 @@ header{
 }
 .conatiner{
     width: 100%;
-    min-height: 668px;
+    min-height: 800px;
     position: relative;
     display: flex;
     align-items: center;
     background: rgb(2,3,7,0.4);
+    margin-top: 60px;
     
 }
 
@@ -213,4 +232,186 @@ header{
 }
 .coming-container .box{
     width: 100px;
+}
+
+/* newsletter */
+.newsletter{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+}
+.newsletter h2{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+}
+.newsletter form{
+    background: var(--bg-color);
+    padding: 10px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+
+}
+.newsletter form input{
+    border: none;
+    outline:none;
+}
+.newsletter form .email{
+    width: 280px;
+}
+.newsletter form input::placeholder{
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+.newsletter .btn{
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* footer */
+.footer{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+.social .bx{
+    background: 2px;
+    padding: 2px;
+    font-size: 2rem;
+    border-radius: 50%;
+    border: 4px solid black;
+    color: var(--main-color);
+}
+.social .bx:hover{
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: 0.2s all linear;
+}
+
+.copyright{
+    padding: 20px;
+    text-align: center;
+    color: var(--bg-color);
+}
+
+@media (max-width:1080px) {
+    .home-text{
+        padding: 0 100px;
+    }
+    
+}
+@media (max-width:991px) {
+    header{
+        padding: 18px 4%;
+    }
+    section{
+        padding: 50px 4%;
+    }
+    .home-text{
+        padding: 0 4%;
+    }
+
+    .home-text h1{
+        font-size: 3rem;
+    }
+    
+}
+@media (max-width:774px){
+    header{
+        padding: 12px 4%;
+    }
+    #menu-icon{
+        display: initial;
+        color: var(--bg-color);
+    }
+    header .shadow #menu-icon{
+        color: var(--text-color);
+    }
+    .navbar{
+        position: absolute;
+        top: -570px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        row-gap: 1.4rem;
+        padding: 20px;
+        box-shadow:4px 4px 0 4px rgb(14 55 54/15%);
+        transition: 0.2s all linear;
+        text-align: center;
+    }
+    .navbar a{
+        width: 100%;
+        color: var(--text-color);
+    }
+    .navbar a:hover{
+        color: var(--main-color);
+        border-bottom: 2px solid --main-color;
+    }
+    .navbar a::after{
+        display: none;
+
+    }
+    .navbar .active{
+        top: 100%;
+    }
+    .home-text h1{
+        font-size: 2.4rem;
+    }
+    .btn{
+       padding: 0.6rem; 
+    }
+    .movies-container{
+        grid-template-columns: repeat(auto-fit,minmax(160px,auto));
+    }
+}
+@media (max-width:472px) {
+    .newsletter form .email{
+      width: auto;  
+    }
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
+    
+}
+@media (max-width:370px) {
+    header{
+        padding: 6px 4%;
+    }
+    .home-text h1{
+        font-size: 1.7rem;
+
+    }
+    .play{
+        right: 2rem;
+        bottom: 8%;
+    }
+    .play .bx{
+        padding: 7px;
+    }
+    .movies-container{
+        grid-template-columns: repeat(auto-fit,minmax(140px,auto));
+    }
+    .box .box-img{
+        height: 248px;
+    }
 }
